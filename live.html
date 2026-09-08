@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#12569E;--blue-d:#0E4076;--gold:#E8B94F;--gold-d:#D9A63C;--gold-l:#F3D07A;--off:#F7F7F5;--ink:#1F2A37;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#DDE3EA;font-family:'Cairo',sans-serif;padding:30px;display:flex;justify-content:center}
+.frame{width:1440px;background:var(--off);border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(14,64,118,.18)}
+.topbar{background:var(--blue-d);color:#CFE0F2;font-size:14px;text-align:center;padding:9px}
+.head{background:var(--blue);color:#fff;padding:18px 34px;display:flex;align-items:center;gap:26px}
+.head .logo{display:flex;align-items:center;gap:12px}
+.head .logo .t1{font-size:26px;font-weight:900;line-height:1}
+.head .logo .t1 b{color:var(--gold-l)}
+.head .logo .t2{font-size:12px;color:#BBD2EA;letter-spacing:4px}
+.search{flex:1;background:#fff;border-radius:12px;padding:13px 18px;color:#9AA7B4;font-size:15px;display:flex;justify-content:space-between}
+.hicons{display:flex;gap:20px;font-size:14px;font-weight:700;align-items:center}
+.hicons .cart{background:var(--gold);color:#0C3A6B;padding:11px 20px;border-radius:12px}
+.nav{background:#0F4E8F;color:#DCE9F7;display:flex;gap:26px;padding:12px 34px;font-size:14px;font-weight:600}
+.nav span:first-child{color:var(--gold-l)}
+.hero{margin:22px 26px 0;height:330px;border-radius:18px;position:relative;overflow:hidden;background:linear-gradient(115deg,#0C3A6B 0%,#12569E 55%,#1A66B4 100%);color:#fff;display:flex;align-items:center;padding:0 46px}
+.hero .kick{display:inline-block;font-size:13px;font-weight:700;letter-spacing:2px;padding:7px 16px;border-radius:999px;background:rgba(243,208,122,.16);border:1.5px solid rgba(243,208,122,.45);color:var(--gold-l);margin-bottom:16px}
+.hero h1{font-size:44px;font-weight:900;line-height:1.2;margin-bottom:12px}
+.hero h1 span{color:var(--gold-l)}
+.hero p{font-size:17px;opacity:.9;margin-bottom:22px}
+.hero .cta{display:inline-block;font-size:16px;font-weight:800;padding:13px 34px;border-radius:999px;background:linear-gradient(120deg,var(--gold-d),var(--gold-l));color:#0C3A6B}
+.hero .disc{position:absolute;left:70px;top:50%;transform:translateY(-50%);width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08);border:2.5px dashed rgba(243,208,122,.5);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero .disc b{font-size:62px;color:var(--gold-l);line-height:1}
+.hero .disc i{font-style:normal;font-size:16px;font-weight:700}
+.dots{display:flex;gap:7px;justify-content:center;margin:14px 0 0}
+.dots i{width:8px;height:8px;border-radius:50%;background:#C6D2DE;display:block}
+.dots i:first-child{background:var(--blue);width:22px;border-radius:9px}
+.sec{margin:34px 26px 0}
+.sechead{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.sechead h2{font-size:24px;color:var(--blue-d);font-weight:900}
+.sechead h2 em{font-style:normal;color:var(--gold-d)}
+.sechead a{font-size:14px;color:var(--blue);font-weight:700}
+.cats{display:flex;gap:18px;justify-content:space-between}
+.cat{width:135px;text-align:center}
+.cat .c{width:135px;height:135px;border-radius:50%;background:#fff;border:2px solid #E6ECF3;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(14,64,118,.07)}
+.cat .c svg{width:62px;height:62px}
+.cat .n{margin-top:11px;font-size:14px;font-weight:700;color:var(--ink)}
+.cat:nth-child(2n) .c{border-color:#F3E3C4}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.prod{background:#fff;border:1px solid #ECF0F5;border-radius:16px;padding:14px;position:relative}
+.prod .ph{height:150px;border-radius:12px;background:linear-gradient(140deg,#EEF3F9,#E3EBF4);display:flex;align-items:center;justify-content:center;color:#B6C4D3;font-size:13px;font-weight:700}
+.prod .tag{position:absolute;top:22px;right:22px;background:var(--gold);color:#0C3A6B;font-size:11px;font-weight:800;padding:5px 11px;border-radius:999px;z-index:2}
+.prod h3{font-size:14px;font-weight:700;color:var(--ink);margin:12px 0 6px;line-height:1.5}
+.prod .price{font-size:17px;font-weight:900;color:var(--blue)}
+.prod .old{font-size:13px;color:#A9B4C0;text-decoration:line-through;margin-right:7px}
+.prod .btn{margin-top:11px;background:var(--blue);color:#fff;text-align:center;padding:9px;border-radius:10px;font-size:13px;font-weight:700}
+.brow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bcard{height:190px;border-radius:16px;padding:28px 32px;display:flex;flex-direction:column;justify-content:center;color:#fff;position:relative;overflow:hidden}
+.bcard.g{background:linear-gradient(120deg,#0F4E8F,#1A66B4)}
+.bcard.y{background:linear-gradient(120deg,#D9A63C,#F3D07A);color:#0C3A6B}
+.bcard h3{font-size:26px;font-weight:900;margin-bottom:8px;position:relative}
+.bcard p{font-size:15px;opacity:.92;margin-bottom:14px;position:relative}
+.bcard span{align-self:flex-start;font-size:13px;font-weight:800;padding:9px 22px;border-radius:999px;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.45);position:relative}
+.bcard.y span{background:rgba(12,58,107,.10);border-color:rgba(12,58,107,.3)}
+.bcard .blob{position:absolute;width:230px;height:230px;border-radius:50%;left:-60px;top:-70px;background:rgba(255,255,255,.08)}
+.wide{height:150px;border-radius:16px;border:2.5px dashed #C3D2E2;background:#fff;display:flex;align-items:center;justify-content:center;color:#93A5B8;font-size:15px;font-weight:700}
+.slider{position:relative}
+.arrow{position:absolute;top:55%;width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid #E1E8F0;box-shadow:0 8px 20px rgba(14,64,118,.10);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:20px;font-weight:900;z-index:5}
+.arrow.l{left:-14px}
+.arrow.r{right:-14px}
+.foot{margin-top:40px;background:var(--blue-d);color:#C9DAEC;padding:34px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}
+.foot h4{color:#fff;font-size:16px;margin-bottom:14px}
+.foot p,.foot li{font-size:13px;line-height:2.1;list-style:none;opacity:.9}
+.copy{background:#0A3059;color:#8FB0D2;text-align:center;font-size:12px;padding:14px}
+@media (max-width:600px){
+ body{padding:0;background:var(--off)}
+ .frame{width:100%;border-radius:0;box-shadow:none}
+ .topbar{font-size:11px}
+ .head{padding:12px 14px;gap:10px;flex-wrap:wrap}
+ .head .logo .t1{font-size:19px}
+ .head .logo .t2{font-size:9px;letter-spacing:2px}
+ .search{order:3;flex-basis:100%;padding:10px 13px;font-size:12px}
+ .hicons{font-size:11px;gap:9px;margin-right:auto}
+ .hicons .cart{padding:8px 12px}
+ .nav{gap:14px;padding:10px 14px;font-size:12px;overflow-x:auto;white-space:nowrap}
+ .hero{margin:12px 14px 0;height:220px;padding:0 18px}
+ .hero h1{font-size:24px}
+ .hero p{font-size:13px;margin-bottom:14px}
+ .hero .kick{font-size:10px;margin-bottom:10px}
+ .hero .cta{font-size:13px;padding:10px 24px}
+ .hero .disc{width:96px;height:96px;left:12px;top:auto;bottom:16px;transform:none;border-width:2px;opacity:.55}
+ .hero .disc b{font-size:28px}
+ .hero .disc i{font-size:9px}
+ .hero>div{max-width:74%}
+ .sec{margin:24px 14px 0}
+ .sechead h2{font-size:18px}
+ .sechead a{font-size:12px}
+ .cats{overflow-x:auto;justify-content:flex-start;gap:12px;padding-bottom:6px}
+ .cat,.cat .c{width:92px}
+ .cat .c{height:92px;flex:none}
+ .cat .c svg{width:42px;height:42px}
+ .cat .n{font-size:11px}
+ .grid{grid-template-columns:1fr 1fr;gap:12px}
+ .prod .ph{height:110px}
+ .prod h3{font-size:12px}
+ .brow{grid-template-columns:1fr}
+ .bcard{height:150px;padding:20px 22px}
+ .bcard h3{font-size:20px}
+ .bcard p{font-size:13px}
+ .wide{height:110px;font-size:12px;text-align:center;padding:0 20px}
+ .arrow{display:none}
+ .foot{grid-template-columns:1fr 1fr;padding:24px 18px;gap:18px}
+}
+</style></head><body>
+<div class="frame">
+  <div class="topbar">توصيل مجاني للطلبات فوق 200 ريال | خدمة العملاء طوال ايام الاسبوع</div>
+  <div class="head">
+    <div class="logo">
+      <svg width="46" height="46" viewBox="0 0 200 200"><defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#D9A63C"/><stop offset="1" stop-color="#F3D07A"/></linearGradient></defs>
+      <circle cx="100" cy="100" r="68" fill="none" stroke="url(#g)" stroke-width="12" stroke-linecap="round" stroke-dasharray="148 66" transform="rotate(-58 100 100)"/>
+      <g fill="#fff"><rect x="85" y="56" width="30" height="88" rx="11"/><rect x="56" y="85" width="88" height="30" rx="11"/></g></svg>
+      <div><div class="t1">سبل <b>الذهبية</b></div><div class="t2">صيدلية طبية</div></div>
+    </div>
+    <div class="search"><span>ابحث عن دواء، فيتامين، منتج عناية...</span><span>&#128269;</span></div>
+    <div class="hicons"><span>حسابي</span><span>المفضلة</span><span class="cart">السلة &middot; 0</span></div>
+  </div>
+  <div class="nav"><span>كل الاقسام</span><span>الادوية</span><span>العناية بالمرأة</span><span>العناية بالبشرة</span><span>الفيتامينات والمكملات</span><span>حفاضات ومستلزمات</span><span>العروض</span></div>
+
+  <div class="hero">
+    <div style="position:relative;z-index:3;max-width:640px">
+      <div class="kick">صيدلية سبل الذهبية الطبية</div>
+      <h1>صحتك تبدا من <span>سبل الذهبية</span></h1>
+      <p>ادوية ومستحضرات اصلية مع توصيل سريع لباب بيتك</p>
+      <div class="cta">تسوق الان</div>
+    </div>
+    <div class="disc"><b>%20</b><i>خصم الافتتاح</i></div>
+  </div>
+  <div class="dots"><i></i><i></i><i></i></div>
+
+  <div class="sec">
+    <div class="sechead"><h2>تسوق حسب <em>القسم</em></h2><a>عرض الكل</a></div>
+    <div class="cats" id="cats"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sechead"><h2>الاكثر <em>مبيعا</em></h2><a>عرض الكل</a></div>
+    <div class="grid" id="g1"></div>
+  </div>
+
+  <div class="sec brow">
+    <div class="bcard g"><div class="blob"></div><h3>عروض الفيتامينات</h3><p>اشتري 2 واحصل على الثالث مجانا</p><span>تسوق العرض</span></div>
+    <div class="bcard y"><h3>العناية بالبشرة</h3><p>خصم يصل الى 30% على مجموعة مختارة</p><span>اكتشفي المجموعة</span></div>
+  </div>
+
+  <div class="sec wide">مساحة بنر عريض جاهزة (فاضية حسب طلبك)</div>
+
+  <div class="sec slider">
+    <div class="sechead"><h2>وصل <em>حديثا</em></h2><a>عرض الكل</a></div>
+    <div class="arrow r">&rsaquo;</div><div class="arrow l">&lsaquo;</div>
+    <div class="grid" id="g2"></div>
+  </div>
+
+  <div class="foot">
+    <div><h4>صيدلية سبل الذهبية الطبية</h4><p>صيدلية الكترونية توفر الادوية ومنتجات العناية والفيتامينات مع توصيل سريع لجميع مناطق المملكة.</p></div>
+    <div><h4>روابط مهمة</h4><ul><li>من نحن</li><li>تواصل معنا</li><li>الاسئلة الشائعة</li><li>تتبع طلبك</li></ul></div>
+    <div><h4>السياسات</h4><ul><li>سياسة الشحن والتوصيل</li><li>سياسة الاستبدال والاسترجاع</li><li>سياسة الخصوصية</li><li>الشروط والاحكام</li></ul></div>
+    <div><h4>تابعنا</h4><ul><li>انستقرام - تويتر - تيك توك</li><li>واتساب: 05xxxxxxxx</li><li>الدفع: مدى - فيزا - Apple Pay - تابي</li></ul></div>
+  </div>
+  <div class="copy">جميع الحقوق محفوظة - صيدلية سبل الذهبية الطبية 2026</div>
+</div>
+
+<script>
+var I = {
+ pill:'<path d="M20 44 L44 20 a12 12 0 0 1 17 17 L37 61 a12 12 0 0 1 -17 -17z" fill="none" stroke="#12569E" stroke-width="5"/><path d="M28 36 L45 53" stroke="#D9A63C" stroke-width="5" stroke-linecap="round"/>',
+ woman:'<circle cx="40" cy="30" r="13" fill="none" stroke="#12569E" stroke-width="5"/><path d="M40 43 v20 M31 55 h18" stroke="#D9A63C" stroke-width="5" stroke-linecap="round"/>',
+ skin:'<circle cx="40" cy="40" r="20" fill="none" stroke="#12569E" stroke-width="5"/><circle cx="33" cy="35" r="3" fill="#D9A63C"/><circle cx="46" cy="44" r="4" fill="#D9A63C"/>',
+ vit:'<rect x="26" y="22" width="28" height="38" rx="12" fill="none" stroke="#12569E" stroke-width="5"/><path d="M27 41 h26" stroke="#D9A63C" stroke-width="5"/>',
+ baby:'<path d="M24 34 h32 v18 a8 8 0 0 1 -8 8 h-16 a8 8 0 0 1 -8 -8z" fill="none" stroke="#12569E" stroke-width="5"/><path d="M24 34 l8 -12 h16 l8 12" fill="none" stroke="#D9A63C" stroke-width="5" stroke-linejoin="round"/>',
+ teeth:'<path d="M26 26 h28 v16 c0 12 -6 20 -14 20 s-14 -8 -14 -20z" fill="none" stroke="#12569E" stroke-width="5"/><path d="M40 26 v34" stroke="#D9A63C" stroke-width="5"/>',
+ deo:'<rect x="30" y="26" width="20" height="34" rx="6" fill="none" stroke="#12569E" stroke-width="5"/><path d="M34 26 v-6 h12 v6" fill="none" stroke="#D9A63C" stroke-width="5"/>',
+ hair:'<path d="M24 58 c0 -22 8 -34 16 -34 s16 12 16 34" fill="none" stroke="#12569E" stroke-width="5"/><path d="M32 58 c0 -14 4 -22 8 -22" fill="none" stroke="#D9A63C" stroke-width="5"/>',
+ body:'<path d="M28 30 h24 v22 a10 10 0 0 1 -10 10 h-4 a10 10 0 0 1 -10 -10z" fill="none" stroke="#12569E" stroke-width="5"/><path d="M36 30 v-8 h8 v8" fill="none" stroke="#D9A63C" stroke-width="5"/>'
+};
+var cats = [['الادوية','pill'],['العناية بالمرأة','woman'],['العناية بالبشرة','skin'],['الفيتامينات والمكملات','vit'],['حفاضات ومستلزمات','baby'],['العناية بالفم والاسنان','teeth'],['مزيلات العرق','deo'],['العناية بالشعر','hair'],['الجسم والاستحمام','body']];
+document.getElementById('cats').innerHTML = cats.map(function(c){
+  return '<div class="cat"><div class="c"><svg viewBox="0 0 80 80">' + I[c[1]] + '</svg></div><div class="n">' + c[0] + '</div></div>';
+}).join('');
+var prods = [['بانادول اكسترا 24 قرص','19','24','خصم'],['فيتامين د 5000 وحدة','65','89','الاكثر مبيعا'],['سيروم فيتامين سي 30 مل','120','',''],['حفاضات مقاس 4 - 68 حبة','89','109','عرض'],['غسول يومي للبشرة 400 مل','58','',''],['اوميغا 3 بلس 60 كبسولة','95','120','خصم'],['مزيل عرق للبشرة الحساسة','42','',''],['شامبو ضد القشرة 400 مل','54','69','عرض'],['معجون اسنان للحساسية','23','',''],['كريم مرطب للجسم 454 جم','128','149','الاكثر مبيعا']];
+function card(p){
+  return '<div class="prod">' + (p[3] ? '<div class="tag">' + p[3] + '</div>' : '') +
+  '<div class="ph">صورة المنتج</div><h3>' + p[0] + '</h3><div class="price">' + p[1] + ' ر.س ' +
+  (p[2] ? '<span class="old">' + p[2] + ' ر.س</span>' : '') + '</div><div class="btn">اضف للسلة</div></div>';
+}
+document.getElementById('g1').innerHTML = prods.slice(0,5).map(card).join('');
+document.getElementById('g2').innerHTML = prods.slice(5,10).map(card).join('');
+</script>
+</body></html>
