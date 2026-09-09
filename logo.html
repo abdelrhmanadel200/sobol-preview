@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لوجو صيدلية سبل الذهبية</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+:root{--ground:#F6F5F1;--surface:#FFFFFF;--ink:#16202B;--muted:#5C6B7C;--line:#E2E6EC;--blue:#12569E;--gold:#C9982F}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ground:#0C141D;--surface:#131F2B;--ink:#EAF0F6;--muted:#95A6B7;--line:#22323F;--blue:#4E93DA;--gold:#E8C463}}
+:root[data-theme="dark"]{--ground:#0C141D;--surface:#131F2B;--ink:#EAF0F6;--muted:#95A6B7;--line:#22323F;--blue:#4E93DA;--gold:#E8C463}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:'Tajawal',Tahoma,sans-serif;line-height:1.7}
+.wrap{max-width:900px;margin:0 auto;padding:28px 18px 60px}
+h1{font-family:'Cairo',sans-serif;font-weight:900;font-size:clamp(24px,5vw,34px);margin:0 0 6px}
+p.lede{margin:0 0 26px;color:var(--muted);max-width:60ch}
+section{margin-top:26px}
+h2{font-family:'Cairo',sans-serif;font-size:18px;margin:0 0 10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;align-items:center;justify-content:center}
+.card.blue{background:#12569E;border-color:#0E4076}
+.card img{max-width:100%;height:auto;display:block}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+.note{margin-top:34px;padding:16px 18px;border-radius:14px;background:var(--surface);border:1px solid var(--line);border-inline-start:4px solid var(--gold);color:var(--muted);font-size:14.5px}
+footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>لوجو صيدلية سبل <span style="color:var(--gold)">الذهبية</span></h1>
+  <p class="lede">الاسم الرئيسي «صيدلية سبل الذهبية» وتحته «الطبية» بخط اصغر، بالالوان المتفق عليها: ازرق واصفر ذهبي هادي.</p>
+
+  <section>
+    <h2>النسخة الاساسية</h2>
+    <div class="card"><img src="logo-primary.png" alt="اللوجو الافقي"></div>
+  </section>
+
+  <section>
+    <h2>على خلفية ملونة</h2>
+    <div class="card blue"><img src="logo-on-blue.png" alt="اللوجو على خلفية زرقاء"></div>
+  </section>
+
+  <section>
+    <h2>نسخ اضافية</h2>
+    <div class="grid">
+      <div class="card"><img src="logo-stacked.png" alt="اللوجو الرأسي"></div>
+      <div class="card"><img src="logo-icon.png" alt="ايقونة المتجر"></div>
+    </div>
+  </section>
+
+  <div class="note">النسخة الرأسية تستخدم في السوشيال ميديا والتغليف، والايقونة تستخدم لتبويب المتصفح وصورة الحسابات.</div>
+  <footer>تصميم وتجهيز المتجر - محمود عمرو</footer>
+</div>
+</body>
+</html>
